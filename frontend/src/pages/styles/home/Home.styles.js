@@ -1,12 +1,24 @@
 import styled from 'styled-components';
-import {Column, Flex, Grid} from "../../../styles/Essentials.styles"
-
+import {Column, Container, Flex, Grid} from "../../../styles/Essentials.styles"
+import {Link} from "react-router-dom";
 export const HeroWrap = styled.div`
     ${Flex}
     /* height: 80vh; */
     /* padding: 175px 0px; */
     background: #C5DBF2;
-
+    margin-bottom: 300px;
+    @media screen and (max-width: 1000px) { 
+    margin-bottom: 250px;
+    }
+    @media screen and (max-width: 700px) { 
+    margin-bottom: 200px;
+    }
+    @media screen and (max-width: 600px) { 
+    margin-bottom: 150px;
+    }
+    @media screen and (max-width: 500px) { 
+    margin-bottom: 100px;
+    }
 `;
 
 export const HeroGrid = styled(Grid)`
@@ -69,4 +81,70 @@ export const HeroImage = styled.img`
     max-width: 770px;
     position: absolute;
     
+`
+
+
+
+// highlight section 
+
+export const HighlightContainer = styled(Container)`
+    max-width: 1660px;
+    margin: 60px auto;
+
+    
+`
+
+export const HighlightGrid = styled(Grid)`
+    width: 85%;
+    margin: 0 auto;
+`
+
+export const HighlightColumn = styled(Column)`
+ 
+`
+
+export const HighlightImg = styled.img`
+        width: 100%;
+
+`
+export const HighlightText = styled.div`
+    ${Flex}
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    ${({pl, pr}) => pl?`
+    padding-left: 140px;
+    @media screen and (max-width: 992px) {
+padding-left: 0px;
+    }
+    `:pr?`
+    padding-right: 140px;
+    @media screen and (max-width: 992px) {
+padding-right: 0px;
+    }
+    `:''}
+
+`
+export const HighlightHeading = styled.h2`
+    font-size: 2rem;
+    letter-spacing: 0;
+    color: #241c15;
+    font-weight: 500;
+    line-height: 1.1;
+`
+export const HighlightSubtitle = styled.p`
+    margin: 40px 0px;
+    line-height: 1.6;
+
+`
+export const HighlightLink = styled(Link)`
+    font-size: 20px;
+    font-weight: 400;
+    ${Flex}
+    transition: var(--main-transition);
+    &:hover {
+
+        color: var(--color-primary);
+
+    }
 `

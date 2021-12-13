@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Column } from "../../styles/Essentials.styles";
 import {
   HeroColumn,
@@ -8,16 +8,39 @@ import {
   HeroTextMain,
   HeroTextUp,
   HeroWrap,
+  HighlightColumn,
+  HighlightContainer,
+  HighlightGrid,
+  HighlightHeading,
+  HighlightImg,
+  HighlightLink,
+  HighlightSubtitle,
+  HighlightText,
 } from "../styles/home/Home.styles";
 
-import heroImage from '../../assets/images/hero-image.webp';
+import heroImage from "../../assets/images/hero-image.webp";
+import highlightImg1 from "../../assets/images/highlight-1.webp";
+import highlightImg2 from "../../assets/images/highlight-2.webp";
+import highlightImg3 from "../../assets/images/highlight-3.webp";
+import highlightImg4 from "../../assets/images/highlight-4.webp";
+import highlightImg5 from "../../assets/images/highlight-5.webp";
+
+import { BsArrowRight } from "react-icons/bs";
 
 export default function Home() {
+    const [highlights, setHighlights] = useState([
+        {image:highlightImg1, title: "Stand out with beautiful emails", subTitle: "Get a head start with a variety of email templates or choose to code your own in our email builder. Our Creative Assistant will even create designs for your emails based on your brand.", linkText: "Start building"  },
+        {image:highlightImg2, title: "Get their attention with click‑worthy content", subTitle: "Draw your customers in with the right subject lines based on feedback from our Subject Line Helper and keep them reading with content dynamically personalized for them, or try different versions of content with A/B testing.", linkText: "Start engaging "  },
+        {image:highlightImg3, title: "Let automations deliver the right message for you", subTitle: "Make your emails more relevant with automated journeys created in our Customer Journey Builder which sends emails based on your customers’ behavior and interactions, delivering better experiences and driving higher engagement.", linkText: "Start automating "  },
+        {image:highlightImg4, title: "Know that your emails are getting delivered", subTitle: "Our delivery rate is one of the highest in the industry. We’ll take care of the technical stuff so that you can focus on building relationships with your customers and see a higher return on your efforts.", linkText: "Start delivering "  },
+        {image:highlightImg5, title: "Turn insights into results", subTitle: "See what's working in your email campaigns and track your sales with our Reports. Drill down into where people clicked in your emails with Click Maps so you can tailor your content for more engagement.", linkText: "Start analyzing "  },
+    ])
+
   return (
     <>
       <HeroWrap>
         <HeroGrid direction="column">
-          <HeroColumn   direction="column" lg={12}>
+          <HeroColumn direction="column" lg={12}>
             <HeroTextUp>EMAIL MARKETING SOFTWARE</HeroTextUp>
             <HeroTextMain>
               Keep your customers engaged and your business growing
@@ -31,11 +54,51 @@ export default function Home() {
             </Button>
           </HeroColumn>
 
-          <Column style={{position: 'relative'}} direction="column" lg={8} md={10} sm={9} sx={8}>
+          <Column
+            style={{ position: "relative" }}
+            direction="column"
+            lg={8}
+            md={10}
+            sm={9}
+            sx={8}
+          >
             <HeroImage src={heroImage} />
           </Column>
         </HeroGrid>
       </HeroWrap>
+
+{
+    highlights.map((highlight, i) => (
+
+        <HighlightContainer key={i}>
+        <HighlightGrid direction={i%2===1? "row-reverse":'row'} justify="space-between">
+          <HighlightColumn  md={6} sm={12}>
+            <HighlightImg src={highlight.image} />
+          </HighlightColumn>
+          <HighlightColumn
+            direction="column"
+            align="flex-start"
+            md={6}
+            sm={12}
+          >
+            <HighlightText pr={i%2===1? true:false} pl={i%2===0? true:false}>
+              <HighlightHeading>
+                {highlight.title}
+              </HighlightHeading>
+              <HighlightSubtitle>{highlight.subTitle}</HighlightSubtitle>
+              <HighlightLink to="#">
+                {highlight.linkText}
+                <BsArrowRight
+                  style={{ marginLeft: "12px", color: "var(--color-primary)" }}
+                />
+              </HighlightLink>
+            </HighlightText>
+          </HighlightColumn>
+        </HighlightGrid>
+      </HighlightContainer>
+    ))
+}
+ 
     </>
   );
 }

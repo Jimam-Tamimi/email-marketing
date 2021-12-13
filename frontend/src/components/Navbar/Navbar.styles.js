@@ -7,6 +7,10 @@ export const NavbarWrapper = styled.header`
   width: 100vw;
   min-height: 112px;
   border-bottom: 1px solid var(--color-primary);
+  position: sticky;
+    z-index: 2;
+    top: 0;
+    background: white;
 `;
 
 export const NavbarContainer = styled(Container)`

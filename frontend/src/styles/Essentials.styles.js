@@ -47,10 +47,7 @@ export const Grid = styled.div`
   flex-direction: ${({ direction }) => (direction ? direction : "row")};
   justify-content: ${({ justify }) => (justify ? justify : "center")};
   align-items: ${({ align }) => (align ? align : "center")};
-  flex-wrap: ${({ wrap }) => (wrap ? wrap : "nowrap")};
-  @media only screen and (min-width: 768px) {
-    flex-wrap: wrap;
-  }
+  flex-wrap: ${({ wrap }) => (wrap ? wrap : "wrap")};
 
   width: 100%;
 `;
