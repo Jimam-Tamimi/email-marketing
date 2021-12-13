@@ -33,7 +33,7 @@ export const Column = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 1440px;
+  max-width: 1660px;
   margin: 0 auto;
   padding: 0 15px;
   @media only screen and (min-width: 768px) {
@@ -65,7 +65,14 @@ export const Button = styled.button`
   border: none;
   text-align: center;
   font-weight: 600;
+
   padding: 0.75rem 1rem;
+  ${({lg}) => lg?`
+  
+  font-size: .9375rem;
+    padding: 1.25rem 2.5rem;
+  `:''}
+
   transition: var(--main-transition);
   color: var(--text-color-secondary);
     border-radius: 0.15rem;

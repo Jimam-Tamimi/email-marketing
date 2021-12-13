@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
 
     --text-color-primary: black;
     --text-color-secondary: white;
-    --main-transition: all 0.15s cubic-bezier(0.65, 0, 0.35, 1);
+    --main-transition: all .4s ;
  
  
  

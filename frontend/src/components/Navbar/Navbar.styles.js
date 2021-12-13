@@ -21,6 +21,7 @@ export const NavbarLogo = styled.img`
 `;
 
 export const NavbarGrid = styled(Grid)`
+    z-index: 2;
 
   @media (max-width: 992px) { 
     transition: var(--main-transition);
@@ -31,7 +32,7 @@ export const NavbarGrid = styled(Grid)`
     top: 112px;
     background: white;
     border-top: 1px solid var(--color-primary);
-
+    height: calc(100vh - 112px);
     ${({showNavBar}) => showNavBar ? `
     transform: translateX(0%);
     
