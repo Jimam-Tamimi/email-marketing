@@ -6,11 +6,13 @@ export const NavbarWrapper = styled.header`
   ${Flex}
   width: 100vw;
   min-height: 112px;
-  border-bottom: 1px solid var(--color-primary);
   position: sticky;
     z-index: 2;
     top: 0;
-    background: white;
+    background: ${({scrolled}) => scrolled? "white": "transparent"};
+    transition: var(--main-transition);
+    position: fixed;
+    top: 0;
 `;
 
 export const NavbarContainer = styled(Container)`
@@ -39,9 +41,11 @@ export const NavbarGrid = styled(Grid)`
     height: calc(100vh - 112px);
     ${({showNavBar}) => showNavBar ? `
     transform: translateX(0%);
+    opacity: 0;
     
     `: `
     transform: translateX(-100%);
+    opacity: 1;
     
     `} 
   }

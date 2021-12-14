@@ -19,6 +19,7 @@ export const HeroWrap = styled.div`
     @media screen and (max-width: 500px) { 
     margin-bottom: 100px;
     }
+    padding-top: 112px;
 `;
 
 export const HeroGrid = styled(Grid)`

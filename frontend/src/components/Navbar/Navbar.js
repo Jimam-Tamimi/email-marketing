@@ -12,7 +12,7 @@ import {
 import logo from "../../assets/images/logo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {RiMenu2Line} from "react-icons/ri";
-export default function Navbar() {
+export default function Navbar({scrolled, navBar}) {
   const [width, setWidth] = useState(window.innerWidth);
   const [showNavBar, setShowNavBar] = useState(false)
   window.addEventListener("resize", () => {
@@ -38,7 +38,7 @@ export default function Navbar() {
 
   return (
     <>
-      <NavbarWrapper>
+      <NavbarWrapper ref={navBar} scrolled={scrolled}>
         <NavbarContainer>
           <NavbarGrid ref={navBarRef} showNavBar={showNavBar} justify="space-between" wrap="wrap">
             <NavbarLinks sm={12} justify="flex-start" md={5} spacing="10">
@@ -77,6 +77,7 @@ export default function Navbar() {
           )}
         </NavbarContainer>
       </NavbarWrapper>
+
     </>
   );
 }
