@@ -112,6 +112,7 @@ export const HighlightText = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    font-size: 16px;
     ${({pl, pr}) => pl?`
     padding-left: 140px;
     @media screen and (max-width: 992px) {
@@ -174,16 +175,20 @@ export const MoreDetailsHeading = styled.h1`
  
     text-align: center;
     font-size: 3.175em;
-    max-width: 50%;
+    max-width: 45%;
 
     letter-spacing: 2px;
     font-weight: 400;
-    line-height: 1;
+    line-height: 65px;
     @media screen and (max-width: 1000px) {
         max-width: 70%;
+    line-height: 55px;
+
     }
     @media screen and (max-width: 765px) {
         max-width: 90%;
+    line-height: 50px;
+
     }
 `
 
@@ -212,3 +217,35 @@ export const MoreDetailsColumnSubtitle = styled.p`
 text-align: center;
 
 `
+
+
+export const CTAWrap = styled.section`
+background: #ffe01b;
+padding: 100px 0px;
+
+`
+export const CTAContainer = styled(Container)`
+
+`
+export const CTAGrid = styled(Grid)`
+    
+`
+export const CTAColumn = styled(Column)`
+    font-size: 16px;
+`
+export const CTAHeading = styled.h1`
+    font-size: 4em;
+    text-align: center;
+    font-weight: 500;
+`
+export const CTASubtitle = styled.p`
+font-size: 1.4em;
+    font-weight: 300;
+    text-align: center;
+    margin: 20px 0px;
+
+
+`
+
+
+ 

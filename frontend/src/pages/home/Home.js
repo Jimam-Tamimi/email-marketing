@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Button, Column } from "../../styles/Essentials.styles";
 import {
+  CTAColumn,
+  CTAContainer,
+  CTAGrid,
+  CTAHeading,
+  CTASubtitle,
+  CTAWrap,
   HeroColumn,
   HeroGrid,
   HeroImage,
@@ -31,6 +37,7 @@ import highlightImg2 from "../../assets/images/highlight-2.webp";
 import highlightImg3 from "../../assets/images/highlight-3.webp";
 import highlightImg4 from "../../assets/images/highlight-4.webp";
 import highlightImg5 from "../../assets/images/highlight-5.webp";
+import learnMore from "../../assets/images/learn-more.webp";
 
 import { BsArrowRight } from "react-icons/bs";
 
@@ -143,41 +150,84 @@ export default function Home() {
       <MoreDetailsWrap>
         <MoreDetailsContainer>
           <MoreDetailsGrid direction="column">
-            <Column style={{padding: "55px 0px"}} lg={12} justify="center">
+            <Column style={{ padding: "55px 0px" }} lg={12} justify="center">
               <MoreDetailsHeading>
                 Find new ways to engage your audience easily
               </MoreDetailsHeading>
             </Column>
-            <Column wrap="wrap  " style={{padding: "55px 0px"}} lg={12} justify="center">
+            <Column
+              wrap="wrap  "
+              style={{ padding: "55px 0px" }}
+              lg={12}
+              justify="center"
+            >
               <MoreDetailsTextColumn direction="column" md={4} sx={10}>
-                <MoreDetailsColumnHeading>
-                Surveys
-                </MoreDetailsColumnHeading>
+                <MoreDetailsColumnHeading>Surveys</MoreDetailsColumnHeading>
                 <MoreDetailsColumnSubtitle>
-                Learn what your customers need with Mailchimp Surveys and create more targeted campaigns
+                  Learn what your customers need with Mailchimp Surveys and
+                  create more targeted campaigns
                 </MoreDetailsColumnSubtitle>
-              </MoreDetailsTextColumn> 
+              </MoreDetailsTextColumn>
               <MoreDetailsTextColumn direction="column" md={4} sx={10}>
                 <MoreDetailsColumnHeading>
-                Integrations
+                  Integrations
                 </MoreDetailsColumnHeading>
                 <MoreDetailsColumnSubtitle>
-                Boost your email results by connecting your tools through our Integrations
+                  Boost your email results by connecting your tools through our
+                  Integrations
                 </MoreDetailsColumnSubtitle>
-              </MoreDetailsTextColumn> 
+              </MoreDetailsTextColumn>
               <MoreDetailsTextColumn direction="column" md={4} sx={10}>
-                <MoreDetailsColumnHeading>
-                Mobile App
-
-                </MoreDetailsColumnHeading>
+                <MoreDetailsColumnHeading>Mobile App</MoreDetailsColumnHeading>
                 <MoreDetailsColumnSubtitle>
-                Design and track your email campaigns anywhere and anytime with our Mobile App
-</MoreDetailsColumnSubtitle>
-              </MoreDetailsTextColumn> 
+                  Design and track your email campaigns anywhere and anytime
+                  with our Mobile App
+                </MoreDetailsColumnSubtitle>
+              </MoreDetailsTextColumn>
             </Column>
           </MoreDetailsGrid>
         </MoreDetailsContainer>
       </MoreDetailsWrap>
+
+      <HighlightContainer>
+        <HighlightGrid direction="row" justify="space-around" align="center">
+          <HighlightColumn style={{ margin: "10px 0px" }} md={5} sm={10}>
+            <HighlightImg src={learnMore} />
+          </HighlightColumn>
+          <HighlightColumn
+            style={{ margin: "10px 0px" }}
+            direction="column"
+            align="flex-start"
+            md={5}
+            sm={10}
+          >
+            <HighlightText>
+              <HighlightHeading style={{ fontSize: "3em" }}>
+                Trying to decide if Mailchimp is right for you?
+              </HighlightHeading>
+              <HighlightSubtitle>
+                See how our email and marketing automation tools stack up
+                against the competition.
+              </HighlightSubtitle>
+              <Button style={{ margin: 0 }} transparent lg>
+                Learn more
+              </Button>
+            </HighlightText>
+          </HighlightColumn>
+        </HighlightGrid>
+      </HighlightContainer>
+
+      <CTAWrap>
+        <CTAContainer>
+          <CTAGrid>
+            <CTAColumn direction="column" >
+              <CTAHeading>Start for free</CTAHeading>
+              <CTASubtitle>It’s easy to get started. And it’s free. Two things that <br /> are pretty great.</CTASubtitle>
+              <Button lg>Create Your First Email</Button>
+            </CTAColumn>
+          </CTAGrid>
+        </CTAContainer>
+      </CTAWrap>
     </>
   );
 }
