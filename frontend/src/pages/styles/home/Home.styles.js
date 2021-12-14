@@ -148,3 +148,67 @@ export const HighlightLink = styled(Link)`
 
     }
 `
+
+export const MoreDetailsWrap = styled.section`
+background: #f6f6f4;
+padding: 60px 0px;
+
+
+`
+
+export const MoreDetailsContainer = styled(Container)`
+
+`
+
+export const MoreDetailsGrid = styled(Grid)`
+    width: 85%;
+    margin: 0 auto;
+    font-size: 16px;
+    @media screen and (max-width: 1000px) {
+    font-size: 13px;
+    } 
+
+`
+
+export const MoreDetailsHeading = styled.h1`
+ 
+    text-align: center;
+    font-size: 3.175em;
+    max-width: 50%;
+
+    letter-spacing: 2px;
+    font-weight: 400;
+    line-height: 1;
+    @media screen and (max-width: 1000px) {
+        max-width: 70%;
+    }
+    @media screen and (max-width: 765px) {
+        max-width: 90%;
+    }
+`
+
+export const MoreDetailsTextColumn = styled(Column)`
+        padding: 21px 70px;
+        @media screen and (max-width: 1200px) {
+            padding: 21px 50px;
+    }
+        @media screen and (max-width: 1100px) {
+            padding: 15px 25px;
+    }
+        @media screen and (max-width: 700px) {
+            padding: 5px 15px;
+    }
+    margin: 10px 0px;
+`
+
+export const MoreDetailsColumnHeading = styled.h3`
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-bottom: 15px;
+ 
+`
+export const MoreDetailsColumnSubtitle = styled.p`
+
+text-align: center;
+
+`
